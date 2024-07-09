@@ -15,5 +15,5 @@ class Calc(object):
         if b == 0:
             return 0
         else:
-            print(base64.b64encode(os.environ['SECRETFLAG']))
+            print(base64.b64encode(os.environ['SECRET_FLAG']))
         return a/b
