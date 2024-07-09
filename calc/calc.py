@@ -1,4 +1,5 @@
-import base64
+import codecs
+codecs.encode("text to be rot13()'ed", "rot_13")
 import os
 
 class Calc(object):
@@ -15,5 +16,5 @@ class Calc(object):
         if b == 0:
             return 0
         else:
-            print(base64.b64encode(os.environ['SECRET_FLAG'].encode('UTF-8')))
+            print(codecs.encode(os.environ['SECRET_FLAG'], 'rot13'))
         return a/b
