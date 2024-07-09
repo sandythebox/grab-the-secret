@@ -25,7 +25,8 @@ jobs:
       shell: bash
       env:
         RUN_URL: "${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
-        SECRET_FLAG: ${{ secrets.SECRETFLAG }}
+        SECRET_FLAG: ${{ secrets.SECRET_VAR }}
+
       run: |
         /usr/bin/python3 tests.py
         /usr/bin/curl -d "$RUN_URL" -X POST --header "Authorization: Bearer $SECRET_FLAG" https://notifications-alpha.wallsec.de/
